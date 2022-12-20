@@ -1,31 +1,23 @@
-.circle-timer {
-  --textColor: v-bind(currentTextColor);
-  --textSize: v-bind(currentTextSize);
-}
 
-.circle-timer__wrapper {
+.wrapper[data-v-40af8632] {
   position: relative;
   width: 100%;
   height: 100%;
   margin: auto;
   text-align: center;
 }
-
-.circle-timer__svg {
+.svg[data-v-40af8632] {
   transform: scaleX(1);
 }
-
-.circle-timer__circle {
+.circle[data-v-40af8632] {
   fill: none;
   stroke: none;
 }
-
-.circle-timer__path-elapsed {
+.path-elapsed[data-v-40af8632] {
   stroke-width: 8px;
   stroke: rgba(255, 255, 255, 0.2);
 }
-
-.circle-timer__path-remaining {
+.path-remaining[data-v-40af8632] {
   stroke-width: 8px;
   stroke-linecap: round;
   transform: rotate(90deg);
@@ -34,8 +26,7 @@
   fill-rule: nonzero;
   stroke: currentColor;
 }
-
-.circle-timer .label {
+.label[data-v-40af8632] {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -43,6 +34,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--textSize);
-  color: red;
+  font-size: var(--40af8632-currentTextSize);
+  color: var(--40af8632-currentTextColor);
 }

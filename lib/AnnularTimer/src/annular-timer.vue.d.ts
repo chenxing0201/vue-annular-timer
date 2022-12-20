@@ -3,7 +3,7 @@ interface Threshold {
     color: string;
     threshold: number;
 }
-declare const _default: import("vue").DefineComponent<{
+declare const __default__: import("vue").DefineComponent<{
     defaultColor: {
         type: StringConstructor;
         default: string;
@@ -66,4 +66,4 @@ declare const _default: import("vue").DefineComponent<{
     step: number;
     thresholds: Threshold;
 }>;
-export default _default;
+export default __default__;

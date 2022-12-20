@@ -1,9 +1,9 @@
 <template>
-  <div class="circle-timer__wrapper">
-    <svg class="circle-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <g class="circle-timer__circle">
-        <circle class="circle-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-        <path :stroke-dasharray="strokeDashArray" class="circle-timer__path-remaining" :style="{ color: pathColor }" d="
+  <div class="wrapper">
+    <svg class="svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <g class="circle">
+        <circle class="path-elapsed" cx="50" cy="50" r="45"></circle>
+        <path :stroke-dasharray="strokeDashArray" class="path-remaining" :style="{ color: pathColor }" d="
             M 50, 50
             m -45, 0
             a 45,45 0 1,0 90,0
@@ -16,7 +16,6 @@
         {{time}}
       </span>
     </div>
-
   </div>
 </template>
 
@@ -61,7 +60,7 @@ export default defineComponent({
       timer: -1,
       timeLimit: Math.abs(this.startTime! - this.endTime),
       currentTextColor: ref(this.defaultColor),
-      currentTextSize: ref(this.defaultColor),
+      currentTextSize: ref(this.textSize),
       currentRadius: ref(this.radius)
     }
   },
@@ -114,6 +113,48 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
-@import "../css/annular-timer.scss";
+<style scoped>
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.svg {
+  transform: scaleX(1);
+}
+
+.circle {
+  fill: none;
+  stroke: none;
+}
+
+.path-elapsed {
+  stroke-width: 8px;
+  stroke: rgba(255, 255, 255, 0.2);
+}
+
+.path-remaining {
+  stroke-width: 8px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: v-bind(currentTextSize);
+  color: v-bind(currentTextColor);
+}
 </style>
