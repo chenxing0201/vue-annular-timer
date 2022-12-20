@@ -113,7 +113,6 @@ export default defineComponent({
   }
 })
 </script>
-
 <style lang="scss" scoped>
 .circle-timer {
   --textColor: v-bind(currentTextColor);

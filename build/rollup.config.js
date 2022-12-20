@@ -4,6 +4,7 @@ import path from 'path'
 // import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
 import typescript from 'rollup-plugin-typescript2'
+import postcss from 'rollup-plugin-postcss'
 import pkg from '../package.json'
 const deps = Object.keys(pkg.dependencies)
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -43,6 +44,12 @@ export default [
         },
         abortOnError: false,
       }),
+      postcss(
+        {
+          extensions:['.css','.scss'],
+          extract:'index.css'
+        }
+      )
     ],
     external(id) {
       return /^vue/.test(id)
