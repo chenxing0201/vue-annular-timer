@@ -61,7 +61,7 @@ export default defineComponent({
       timer: -1,
       timeLimit: Math.abs(this.startTime! - this.endTime),
       currentTextColor: ref(this.defaultColor),
-      currentTextSize: ref(this.textSize),
+      currentTextSize: ref(this.defaultColor),
       currentRadius: ref(this.radius)
     }
   },
@@ -113,52 +113,7 @@ export default defineComponent({
   }
 })
 </script>
+
 <style lang="scss" scoped>
-.circle-timer {
-  --textColor: v-bind(currentTextColor);
-  --textSize: v-bind(currentTextSize);
-  &__wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    text-align: center;
-  }
-
-  &__svg {
-    // -1逆时针 1顺时针
-    transform: scaleX(1);
-  }
-
-  &__circle {
-    fill: none;
-    stroke: none;
-  }
-
-  &__path-elapsed {
-    stroke-width: 8px;
-    stroke: rgba(255, 255, 255, 0.2);
-  }
-
-  &__path-remaining {
-    stroke-width: 8px;
-    stroke-linecap: round;
-    transform: rotate(90deg);
-    transform-origin: center;
-    transition: 1s linear all;
-    fill-rule: nonzero;
-    stroke: currentColor;
-  }
-  .label {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--textSize);
-    color: var(--textColor);
-  }
-}
+@import "../css/annular-timer.scss";
 </style>
