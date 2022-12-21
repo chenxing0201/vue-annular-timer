@@ -1,10 +1,12 @@
 <template>
   <div>组件示例</div>
-  <div style="width: 200px;height: 200px">
-    <annular-timer :defaultColor="'#00ff00'" :textSize="'40px'" :start-time="10" :step="-1" :thresholds="[
+  <div>
+    <div style="width: 200px;height: 200px">
+      <annular-timer :defaultColor="'#00ff00'" :textSize="'40px'" :start-time="10" :step="-1" :thresholds="[
       { color: 'blue', threshold: 0.5 },
       { color: 'red', threshold: 0.25 }
-    ]"></annular-timer>
+    ]" :onFinished="finished"></annular-timer>
+    </div>
   </div>
 </template>
  
@@ -22,6 +24,9 @@ export default defineComponent({
   methods: {
     handleClick() {
       this.count++
+    },
+    finished() {
+      console.log("finished")
     }
   }
 })

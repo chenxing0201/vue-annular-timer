@@ -60,8 +60,7 @@ export default defineComponent({
       timer: -1,
       timeLimit: Math.abs(this.startTime! - this.endTime),
       currentTextColor: ref(this.defaultColor),
-      currentTextSize: ref(this.textSize),
-      currentRadius: ref(this.radius)
+      currentTextSize: ref(this.textSize)
     }
   },
 
