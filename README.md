@@ -1,16 +1,16 @@
-# vue-annular-timer
+# annular-timer-vue
 
 ## Install
 ```
-npm i --save-dev vue-annular-timer
-cnpm i --save-dev vue-annular-timer
-yarn add vue-annular-timer
+npm i --save-dev annular-timer-vue
+cnpm i --save-dev annular-timer-vue
+yarn add annular-timer-vue
 
 ```
 ## Usage in main.ts
 ```
-import AnnularTimer from 'vue-annular-timer'
-import 'vue-annular-timer/lib/index.css'
+import AnnularTimer from 'annular-timer-vue'
+import 'annular-timer-vue/lib/index.css'
 ​
 createApp(App).use(AnnularTimer).mount('#app')
 ```

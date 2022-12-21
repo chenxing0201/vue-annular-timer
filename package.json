@@ -1,6 +1,6 @@
 {
-  "name": "vue-annular-timer",
-  "version": "0.1.1",
+  "name": "annular-timer-vue",
+  "version": "0.0.1",
   "private": false,
   "description": "vue环形倒计时组件",
   "main": "lib/index.min.js",
